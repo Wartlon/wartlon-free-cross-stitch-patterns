@@ -36,4 +36,22 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+  <url>
+    <loc>https://wartlon.github.io/wartlon-free-cross-stitch-patterns/blog/how-to-read-a-cross-stitch-pattern/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://wartlon.github.io/wartlon-free-cross-stitch-patterns/blog/what-does-14-count-aida-mean/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://wartlon.github.io/wartlon-free-cross-stitch-patterns/blog/how-to-start-cross-stitching-for-beginners/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
