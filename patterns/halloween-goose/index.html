@@ -3,9 +3,56 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Halloween Goose Cross Stitch Pattern PDF | Wartlon</title>
 <meta name="description" content="Download the free Halloween Goose cross stitch PDF pattern by Wartlon. A cute 28 × 34 stitch goose in a pumpkin costume.">
-<link rel="stylesheet" href="../../styles.css"></head>
+<link rel="stylesheet" href="../../styles.css">
+<!-- Wartlon analytics: Google Analytics 4 + regional Consent Mode -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  /*
+    Regional consent:
+    - EEA + UK + Switzerland: analytics denied until visitor accepts.
+    - Other regions: analytics enabled by default.
+    - Advertising storage / personalization remain disabled everywhere.
+  */
+
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],
+    'wait_for_update': 500
+  });
+
+  gtag('consent', 'default', {
+    'analytics_storage': 'granted',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+
+  // A saved explicit preference overrides the regional default.
+  (function(){
+    const saved = localStorage.getItem('wartlon_analytics_consent');
+    if (saved === 'granted') {
+      gtag('consent', 'update', {'analytics_storage':'granted'});
+    } else if (saved === 'denied') {
+      gtag('consent', 'update', {'analytics_storage':'denied'});
+    }
+  })();
+
+  gtag('js', new Date());
+  gtag('config', 'G-FTGFHNVJ15', {
+    'anonymize_ip': true
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FTGFHNVJ15"></script>
+
+<link rel="canonical" href="https://wartlon.github.io/wartlon-free-cross-stitch-patterns/patterns/halloween-goose/">
+</head>
 <body><div class="wrap">
-<header><a class="brand" href="../../">WARTLON</a><nav><a href="../../#free-patterns">All Free Patterns</a><a href="https://www.etsy.com/shop/Wartlon" target="_blank" rel="noopener">Etsy Shop</a></nav></header>
+<header><a class="brand" href="../../">WARTLON</a><nav><a href="../../#free-patterns">Free Patterns</a><a href="../../blog/">Cross Stitch Blog</a><a href="https://www.etsy.com/shop/Wartlon" target="_blank" rel="noopener">Etsy Shop</a></nav></header>
 <main class="pattern"><section class="pattern-hero">
 <p class="eyebrow">FREE CROSS STITCH PDF</p><h1>Halloween Goose</h1>
 <p>Download the free Halloween Goose cross stitch PDF pattern by Wartlon. A cute 28 × 34 stitch goose in a pumpkin costume.</p>
@@ -15,4 +62,71 @@
 <div class="note"><h3>Want more tiny patterns?</h3><p>Find more mini cross stitch patterns, seasonal designs, bookmarks and more in the Wartlon Etsy shop.</p><a class="btn btn-dark" href="https://www.etsy.com/shop/Wartlon" target="_blank" rel="noopener">Browse Wartlon on Etsy →</a></div>
 </section></main>
 <footer><span>© 2026 Wartlon</span><a href="../../">Free pattern library</a></footer>
-</div></body></html>
+</div>
+<div class="consent-banner" id="consentBanner" hidden role="dialog" aria-live="polite" aria-label="Analytics preferences">
+  <div class="consent-copy">
+    <strong>Help improve Wartlon</strong>
+    <span>In regions where consent is required, Google Analytics stays limited until you choose. You can also change your analytics preference at any time.</span>
+  </div>
+  <div class="consent-actions">
+    <button class="consent-btn consent-accept" type="button" id="acceptAnalytics">Accept analytics</button>
+    <button class="consent-btn consent-decline" type="button" id="declineAnalytics">Continue without analytics</button>
+    <a href="../../privacy.html" class="consent-privacy">Privacy</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  const KEY = 'wartlon_analytics_consent';
+  const banner = document.getElementById('consentBanner');
+  const accept = document.getElementById('acceptAnalytics');
+  const decline = document.getElementById('declineAnalytics');
+  const choice = localStorage.getItem(KEY);
+
+  function showBanner(){
+    if (banner) banner.hidden = false;
+  }
+  function hideBanner(){
+    if (banner) banner.hidden = true;
+  }
+  function grant(){
+    localStorage.setItem(KEY, 'granted');
+    gtag('consent', 'update', {'analytics_storage':'granted'});
+    gtag('event', 'analytics_consent_granted');
+    hideBanner();
+  }
+  function deny(){
+    localStorage.setItem(KEY, 'denied');
+    gtag('consent', 'update', {'analytics_storage':'denied'});
+    hideBanner();
+  }
+
+  if (!choice) showBanner();
+  if (accept) accept.addEventListener('click', grant);
+  if (decline) decline.addEventListener('click', deny);
+
+  // Track free PDF downloads and Etsy outbound clicks.
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    const absolute = link.href || '';
+
+    if (/\.pdf(?:$|[?#])/i.test(href) || /\/pdf\//i.test(href)) {
+      gtag('event', 'free_pattern_download', {
+        link_url: absolute,
+        link_text: (link.textContent || '').trim()
+      });
+    }
+
+    if (/etsy\.com\/shop\/wartlon/i.test(absolute)) {
+      gtag('event', 'etsy_click', {
+        link_url: absolute,
+        link_text: (link.textContent || '').trim()
+      });
+    }
+  });
+})();
+</script>
+
+</body></html>

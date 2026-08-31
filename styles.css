@@ -47,3 +47,244 @@ footer{border-top:1px solid var(--line);padding:28px 0 44px;display:flex;justify
  .hero{padding:48px 26px}.grid{grid-template-columns:1fr}.etsy{grid-template-columns:1fr;padding:34px 26px}
  .section-head{display:block}.pattern-hero{padding:34px 22px}nav a:first-child{display:none}
 }
+
+
+/* --- Blog & calculator --- */
+.blog-hero{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:64px;
+  margin-bottom:54px;
+}
+.blog-hero h1{font-size:clamp(48px,7vw,78px);max-width:840px}
+.blog-hero p:not(.eyebrow){max-width:690px;color:var(--muted);font-size:18px}
+
+.article-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+  margin-bottom:76px;
+}
+.article-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:30px;
+}
+.article-card .tag{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:.13em;
+  font-weight:800;
+  color:var(--orange);
+  margin-bottom:14px;
+}
+.article-card h2{font-size:34px}
+.article-card p{color:var(--muted)}
+.article-card a.read-more{
+  display:inline-block;
+  margin-top:8px;
+  font-weight:700;
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+}
+
+.article-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 260px;
+  gap:54px;
+  align-items:start;
+  margin-bottom:76px;
+}
+.article-main{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:54px;
+}
+.article-main h1{font-size:clamp(44px,6vw,68px);margin-bottom:18px}
+.article-main h2{font-size:34px;margin-top:46px}
+.article-main h3{font-size:25px;margin-top:30px}
+.article-main p,.article-main li{font-size:17px}
+.article-main p{color:#433b32}
+.article-main ul{padding-left:22px}
+.article-main li{margin:8px 0}
+.article-main .lede{font-size:20px;color:var(--muted);max-width:760px}
+.article-main .updated{font-size:13px;color:var(--muted);margin-bottom:28px}
+.article-main a{font-weight:600}
+.toc{
+  position:sticky;
+  top:24px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+  font-size:14px;
+}
+.toc strong{display:block;margin-bottom:12px}
+.toc a{display:block;text-decoration:none;color:var(--muted);padding:6px 0}
+.toc a:hover{color:var(--ink)}
+
+.calculator{
+  background:#f0e8dc;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px;
+  margin:34px 0 42px;
+}
+.calculator h2{margin-top:0}
+.calc-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.field label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+.field input,.field select{
+  width:100%;
+  min-height:46px;
+  padding:10px 12px;
+  border:1px solid #cfc1af;
+  border-radius:10px;
+  background:#fffdf9;
+  color:var(--ink);
+  font:inherit;
+}
+.calc-wide{grid-column:1/-1}
+.calc-button{
+  border:0;
+  cursor:pointer;
+}
+.calc-results{
+  display:none;
+  margin-top:22px;
+  padding:22px;
+  border-radius:14px;
+  background:#fffaf3;
+  border:1px solid var(--line);
+}
+.calc-results.visible{display:block}
+.result-big{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:28px;
+  line-height:1.2;
+  margin:5px 0 14px;
+}
+.result-row{
+  padding:9px 0;
+  border-top:1px solid var(--line);
+}
+.callout{
+  border-left:4px solid var(--green);
+  background:#f3eee6;
+  padding:18px 20px;
+  margin:26px 0;
+  border-radius:0 12px 12px 0;
+}
+.formula{
+  text-align:center;
+  background:#f4eee5;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px;
+  margin:20px 0;
+  font-weight:700;
+}
+.fabric-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:22px 0;
+  font-size:15px;
+}
+.fabric-table th,.fabric-table td{
+  padding:11px 12px;
+  border:1px solid var(--line);
+  text-align:left;
+}
+.fabric-table th{background:#eee5d8}
+.freebie-inline{
+  margin:42px 0 8px;
+  padding:28px;
+  border-radius:18px;
+  background:var(--green);
+  color:white;
+}
+.freebie-inline p{color:rgba(255,255,255,.84)}
+.freebie-inline a.btn{background:white;color:var(--ink)}
+
+@media(max-width:860px){
+  .article-layout{grid-template-columns:1fr}
+  .toc{position:static;order:-1}
+}
+@media(max-width:760px){
+  .blog-hero{padding:44px 26px}
+  .article-grid{grid-template-columns:1fr}
+  .article-main{padding:32px 22px}
+  .calc-grid{grid-template-columns:1fr}
+  .calc-wide{grid-column:auto}
+}
+
+
+/* --- Analytics consent --- */
+.consent-banner{
+  position:fixed;
+  left:18px;
+  right:18px;
+  bottom:18px;
+  z-index:9999;
+  max-width:920px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:18px 20px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fffaf3;
+  box-shadow:0 14px 40px rgba(48,41,31,.16);
+  color:var(--ink);
+}
+.consent-banner[hidden]{display:none}
+.consent-copy{display:flex;flex-direction:column;gap:4px;line-height:1.4}
+.consent-copy span{font-size:13px;color:var(--muted);max-width:560px}
+.consent-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.consent-btn{
+  border-radius:999px;
+  padding:10px 14px;
+  font:inherit;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+}
+.consent-accept{border:1px solid var(--green);background:var(--green);color:#fff}
+.consent-decline{border:1px solid var(--line);background:transparent;color:var(--ink)}
+.consent-privacy{font-size:12px;color:var(--muted)}
+.privacy-page{
+  max-width:840px;
+  margin:0 auto 76px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:54px;
+}
+.privacy-page h1{font-size:clamp(44px,6vw,64px)}
+.privacy-page h2{font-size:30px;margin-top:38px}
+.privacy-page p,.privacy-page li{font-size:16px;line-height:1.7}
+.privacy-controls{
+  padding:20px;
+  border:1px solid var(--line);
+  background:#f4eee5;
+  border-radius:14px;
+  margin:24px 0;
+}
+@media(max-width:760px){
+  .consent-banner{align-items:flex-start;flex-direction:column}
+  .consent-actions{justify-content:flex-start}
+  .privacy-page{padding:32px 22px}
+}

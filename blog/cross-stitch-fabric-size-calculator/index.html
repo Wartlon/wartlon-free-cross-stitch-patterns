@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cross Stitch Fabric Size Calculator & Guide | Wartlon</title>
+<meta name="description" content="Free cross stitch fabric size calculator. Enter your stitch count and Aida or evenweave count to calculate finished design size and recommended fabric cut in inches and centimeters.">
+<link rel="canonical" href="https://wartlon.github.io/wartlon-free-cross-stitch-patterns/blog/cross-stitch-fabric-size-calculator/">
+<link rel="stylesheet" href="../../styles.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Cross Stitch Fabric Size Calculator & Guide",
+  "description":"Calculate finished cross stitch design size and recommended fabric cut from stitch count and fabric count.",
+  "author":{"@type":"Organization","name":"Wartlon"},
+  "publisher":{"@type":"Organization","name":"Wartlon"},
+  "dateModified":"2026-08-31"
+}
+</script>
+
+<!-- Wartlon analytics: Google Analytics 4 + regional Consent Mode -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  /*
+    Regional consent:
+    - EEA + UK + Switzerland: analytics denied until visitor accepts.
+    - Other regions: analytics enabled by default.
+    - Advertising storage / personalization remain disabled everywhere.
+  */
+
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],
+    'wait_for_update': 500
+  });
+
+  gtag('consent', 'default', {
+    'analytics_storage': 'granted',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+
+  // A saved explicit preference overrides the regional default.
+  (function(){
+    const saved = localStorage.getItem('wartlon_analytics_consent');
+    if (saved === 'granted') {
+      gtag('consent', 'update', {'analytics_storage':'granted'});
+    } else if (saved === 'denied') {
+      gtag('consent', 'update', {'analytics_storage':'denied'});
+    }
+  })();
+
+  gtag('js', new Date());
+  gtag('config', 'G-FTGFHNVJ15', {
+    'anonymize_ip': true
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FTGFHNVJ15"></script>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="../../">WARTLON</a>
+  <nav>
+    <a href="../../#free-patterns">Free Patterns</a>
+    <a href="../">Cross Stitch Blog</a>
+    <a href="https://www.etsy.com/shop/Wartlon" target="_blank" rel="noopener">Etsy Shop</a>
+  </nav>
+</header>
+
+<main class="article-layout">
+<article class="article-main">
+  <p class="eyebrow">CROSS STITCH GUIDE + FREE TOOL</p>
+  <h1>Cross Stitch Fabric Size Calculator & Guide</h1>
+  <p class="lede">Not sure how much Aida or evenweave you need? Enter the width and height of your pattern in stitches, choose your fabric count, and the calculator will work out both the finished design size and a suggested fabric cut.</p>
+  <p class="updated">Updated August 31, 2026</p>
+
+  <section class="calculator" id="calculator">
+    <p class="eyebrow">FREE CALCULATOR</p>
+    <h2>Cross Stitch Fabric Size Calculator</h2>
+    <p>Enter the dimensions exactly as they appear on your pattern.</p>
+
+    <div class="calc-grid">
+      <div class="field">
+        <label for="stitchWidth">Pattern width (stitches)</label>
+        <input id="stitchWidth" type="number" min="1" step="1" value="100">
+      </div>
+      <div class="field">
+        <label for="stitchHeight">Pattern height (stitches)</label>
+        <input id="stitchHeight" type="number" min="1" step="1" value="100">
+      </div>
+      <div class="field">
+        <label for="fabricCount">Fabric count</label>
+        <select id="fabricCount">
+          <option value="11">11 count</option>
+          <option value="14" selected>14 count</option>
+          <option value="16">16 count</option>
+          <option value="18">18 count</option>
+          <option value="20">20 count</option>
+          <option value="22">22 count</option>
+          <option value="25">25 count</option>
+          <option value="28">28 count</option>
+          <option value="32">32 count</option>
+          <option value="36">36 count</option>
+          <option value="40">40 count</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="overThreads">Stitching over</label>
+        <select id="overThreads">
+          <option value="1" selected>1 fabric thread / square</option>
+          <option value="2">2 fabric threads</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="margin">Extra fabric per side</label>
+        <select id="margin">
+          <option value="2">2 in / 5.1 cm</option>
+          <option value="2.5">2.5 in / 6.4 cm</option>
+          <option value="3" selected>3 in / 7.6 cm</option>
+          <option value="4">4 in / 10.2 cm</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="rounding">Round fabric cut up to</label>
+        <select id="rounding">
+          <option value="0.25">¼ inch</option>
+          <option value="0.5" selected>½ inch</option>
+          <option value="1">1 inch</option>
+        </select>
+      </div>
+      <div class="calc-wide">
+        <button class="btn btn-green calc-button" type="button" onclick="calculateFabric()">Calculate fabric size</button>
+      </div>
+    </div>
+
+    <div class="calc-results" id="results" aria-live="polite">
+      <p class="eyebrow">YOUR RESULT</p>
+      <div class="result-big" id="finishedSize"></div>
+      <div class="result-row"><strong>Finished design:</strong> <span id="finishedMetric"></span></div>
+      <div class="result-row"><strong>Suggested fabric cut:</strong> <span id="cutSize"></span></div>
+      <div class="result-row"><strong>Suggested fabric cut:</strong> <span id="cutMetric"></span></div>
+      <p class="meta" style="margin-bottom:0">The fabric cut includes the selected extra margin on all four sides.</p>
+    </div>
+  </section>
+
+  <h2 id="how-it-works">How to calculate cross stitch fabric size</h2>
+  <p>The basic calculation is simple: divide the number of stitches by the number of stitches that fit into one inch of fabric.</p>
+  <div class="formula">Design size in inches = number of stitches ÷ effective fabric count</div>
+  <p>For example, a pattern that is 140 stitches wide on 14-count Aida will be 10 inches wide. The same 140-stitch design on 18-count Aida will be about 7.8 inches wide.</p>
+
+  <div class="callout">
+    <strong>Remember:</strong> the finished design size and the fabric cut size are not the same thing. You need extra fabric around the stitched area for a hoop, framing, finishing and handling.
+  </div>
+
+  <h2 id="aida-count">What does Aida count mean?</h2>
+  <p>Aida count tells you how many cross-stitch squares fit into one inch of fabric. On 14-count Aida, there are 14 squares per inch. On 18-count Aida, there are 18. A higher count produces smaller stitches and a smaller finished design.</p>
+
+  <table class="fabric-table">
+    <thead><tr><th>Fabric</th><th>Approximate stitch size</th><th>General effect</th></tr></thead>
+    <tbody>
+      <tr><td>11-count Aida</td><td>Large</td><td>Easy to see; larger finished project</td></tr>
+      <tr><td>14-count Aida</td><td>Medium</td><td>Very common all-purpose size</td></tr>
+      <tr><td>16-count Aida</td><td>Smaller</td><td>Slightly more compact</td></tr>
+      <tr><td>18-count Aida</td><td>Fine</td><td>Smaller, more detailed appearance</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="evenweave">What about evenweave and linen?</h2>
+  <p>Evenweave and linen are often stitched over two fabric threads rather than over one. If you stitch over two on 28-count fabric, the effective cross-stitch count is 14 stitches per inch. That means a design will come out approximately the same size as it would on 14-count Aida.</p>
+  <p>In the calculator, choose <strong>“2 fabric threads”</strong> if you are stitching over two.</p>
+
+  <h2 id="margin">How much extra fabric should I add?</h2>
+  <p>There is no single margin that suits every project. A common choice is around 2–3 inches (5–7.5 cm) on each side. Three inches per side gives you six extra inches total in both width and height.</p>
+  <p>You may want more margin if the piece will be professionally framed, if you prefer plenty of fabric in a hoop or Q-snap, or if you have not decided how you will finish the project yet. Very small ornaments and pin keeps may need less.</p>
+
+  <h2 id="example">Example: 80 × 120 stitches on 14-count Aida</h2>
+  <p>An 80-stitch width on 14-count Aida is about 5.7 inches. A 120-stitch height is about 8.6 inches. With a 3-inch margin on every side, you would want a fabric cut of roughly 11.7 × 14.6 inches before rounding up.</p>
+  <p>The calculator rounds the recommended cut upward so you do not accidentally end up short.</p>
+
+  <h2 id="choosing-count">Does changing fabric count change the pattern?</h2>
+  <p>No. The number and placement of stitches stay the same. Changing the fabric count changes the physical size of each stitch, so the finished embroidery becomes larger or smaller.</p>
+  <p>This is useful when you want to make a mini pattern slightly larger, fit a design into a particular frame, or compare how the same chart will look on 14-, 16- and 18-count Aida.</p>
+
+  <h2 id="before-cutting">Before you cut your fabric</h2>
+  <ul>
+    <li>Check that your pattern dimensions are listed in <strong>stitches</strong>, not centimeters or inches.</li>
+    <li>Confirm the fabric count printed on the fabric packaging.</li>
+    <li>If using linen or evenweave, decide whether you will stitch over one or over two threads.</li>
+    <li>Add enough margin for your preferred finishing method.</li>
+    <li>When in doubt, cutting a little more fabric is safer than cutting too close to the design.</li>
+  </ul>
+
+  <div class="freebie-inline">
+    <p class="eyebrow">TRY A SMALL PROJECT</p>
+    <h2>Want a free pattern to test your fabric?</h2>
+    <p>Visit the Wartlon free pattern library for small downloadable cross stitch PDFs — no sign-up required.</p>
+    <a class="btn" href="../../#free-patterns">Browse free patterns →</a>
+  </div>
+
+  <h2 id="faq">Quick FAQ</h2>
+  <h3>How big is 100 stitches on 14-count Aida?</h3>
+  <p>100 stitches divided by 14 is about 7.1 inches, or approximately 18.1 cm.</p>
+
+  <h3>How big is 100 stitches on 18-count Aida?</h3>
+  <p>100 stitches divided by 18 is about 5.6 inches, or approximately 14.1 cm.</p>
+
+  <h3>Is 28-count evenweave the same size as 14-count Aida?</h3>
+  <p>If you stitch over two threads on 28-count evenweave, the effective count is 14 stitches per inch, so the finished design size is approximately the same as on 14-count Aida.</p>
+
+  <h3>Should I include the margin when measuring the finished design?</h3>
+  <p>No. “Finished design size” refers only to the stitched area. The fabric cut should be larger because it includes extra unstitched fabric around the design.</p>
+</article>
+
+<aside class="toc">
+  <strong>On this page</strong>
+  <a href="#calculator">Fabric calculator</a>
+  <a href="#how-it-works">How the calculation works</a>
+  <a href="#aida-count">Aida count explained</a>
+  <a href="#evenweave">Evenweave & linen</a>
+  <a href="#margin">How much margin?</a>
+  <a href="#example">Example calculation</a>
+  <a href="#choosing-count">Changing fabric count</a>
+  <a href="#before-cutting">Before cutting fabric</a>
+  <a href="#faq">FAQ</a>
+</aside>
+</main>
+
+<footer><span>© 2026 Wartlon</span><a href="https://www.etsy.com/shop/Wartlon" target="_blank" rel="noopener">Wartlon on Etsy</a></footer>
+</div>
+
+<script>
+function ceilTo(value, step){
+  return Math.ceil(value / step) * step;
+}
+function fmt(n){
+  return Number(n.toFixed(2)).toString();
+}
+function calculateFabric(){
+  const w = Number(document.getElementById('stitchWidth').value);
+  const h = Number(document.getElementById('stitchHeight').value);
+  const count = Number(document.getElementById('fabricCount').value);
+  const over = Number(document.getElementById('overThreads').value);
+  const margin = Number(document.getElementById('margin').value);
+  const rounding = Number(document.getElementById('rounding').value);
+
+  if(!w || !h || !count || w < 1 || h < 1){
+    return;
+  }
+
+  const effectiveCount = count / over;
+  const finishedW = w / effectiveCount;
+  const finishedH = h / effectiveCount;
+  const cutW = ceilTo(finishedW + margin * 2, rounding);
+  const cutH = ceilTo(finishedH + margin * 2, rounding);
+
+  const cm = 2.54;
+  document.getElementById('finishedSize').textContent =
+    `${fmt(finishedW)} × ${fmt(finishedH)} inches`;
+  document.getElementById('finishedMetric').textContent =
+    `${fmt(finishedW * cm)} × ${fmt(finishedH * cm)} cm`;
+  document.getElementById('cutSize').textContent =
+    `${fmt(cutW)} × ${fmt(cutH)} inches`;
+  document.getElementById('cutMetric').textContent =
+    `${fmt(cutW * cm)} × ${fmt(cutH * cm)} cm`;
+
+  document.getElementById('results').classList.add('visible');
+  gtag('event', 'fabric_calculator_use', {
+    pattern_width_stitches: w,
+    pattern_height_stitches: h,
+    fabric_count: count,
+    stitch_over_threads: over,
+    margin_inches: margin
+  });
+}
+calculateFabric();
+</script>
+
+<div class="consent-banner" id="consentBanner" hidden role="dialog" aria-live="polite" aria-label="Analytics preferences">
+  <div class="consent-copy">
+    <strong>Help improve Wartlon</strong>
+    <span>In regions where consent is required, Google Analytics stays limited until you choose. You can also change your analytics preference at any time.</span>
+  </div>
+  <div class="consent-actions">
+    <button class="consent-btn consent-accept" type="button" id="acceptAnalytics">Accept analytics</button>
+    <button class="consent-btn consent-decline" type="button" id="declineAnalytics">Continue without analytics</button>
+    <a href="../../privacy.html" class="consent-privacy">Privacy</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  const KEY = 'wartlon_analytics_consent';
+  const banner = document.getElementById('consentBanner');
+  const accept = document.getElementById('acceptAnalytics');
+  const decline = document.getElementById('declineAnalytics');
+  const choice = localStorage.getItem(KEY);
+
+  function showBanner(){
+    if (banner) banner.hidden = false;
+  }
+  function hideBanner(){
+    if (banner) banner.hidden = true;
+  }
+  function grant(){
+    localStorage.setItem(KEY, 'granted');
+    gtag('consent', 'update', {'analytics_storage':'granted'});
+    gtag('event', 'analytics_consent_granted');
+    hideBanner();
+  }
+  function deny(){
+    localStorage.setItem(KEY, 'denied');
+    gtag('consent', 'update', {'analytics_storage':'denied'});
+    hideBanner();
+  }
+
+  if (!choice) showBanner();
+  if (accept) accept.addEventListener('click', grant);
+  if (decline) decline.addEventListener('click', deny);
+
+  // Track free PDF downloads and Etsy outbound clicks.
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    const absolute = link.href || '';
+
+    if (/\.pdf(?:$|[?#])/i.test(href) || /\/pdf\//i.test(href)) {
+      gtag('event', 'free_pattern_download', {
+        link_url: absolute,
+        link_text: (link.textContent || '').trim()
+      });
+    }
+
+    if (/etsy\.com\/shop\/wartlon/i.test(absolute)) {
+      gtag('event', 'etsy_click', {
+        link_url: absolute,
+        link_text: (link.textContent || '').trim()
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

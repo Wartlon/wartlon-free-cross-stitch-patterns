@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wartlon.github.io/wartlon-free-cross-stitch-patterns/sitemap.xml
