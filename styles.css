@@ -312,3 +312,29 @@ footer{border-top:1px solid var(--line);padding:28px 0 44px;display:flex;justify
   line-height:1;
   box-shadow:0 3px 10px rgba(48,41,31,.16);
 }
+
+/* NEW badge fix: overlay inside the image */
+.card .pattern-card-image{position:relative;display:block;overflow:hidden;border-radius:inherit;}
+.card .pattern-card-image img{display:block;width:100%;}
+.card .pattern-card-image .new-badge{position:absolute !important;top:14px !important;left:14px !important;z-index:10;display:inline-flex;align-items:center;justify-content:center;width:auto !important;height:auto !important;padding:7px 12px !important;margin:0 !important;border:0 !important;border-radius:999px !important;background:#596f52 !important;color:#fff !important;font-family:Arial,sans-serif;font-size:11px !important;font-weight:700 !important;line-height:1 !important;letter-spacing:.08em;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.18);}
+
+
+/* Homepage free-pattern previews: show the whole image without cropping */
+#free-patterns .card > a:first-child,
+#free-patterns .card .pattern-card-image{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:var(--paper);
+}
+
+#free-patterns .card > a:first-child img,
+#free-patterns .card .pattern-card-image img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block;
+}
