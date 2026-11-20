@@ -338,3 +338,17 @@ footer{border-top:1px solid var(--line);padding:28px 0 44px;display:flex;justify
   object-position:center center !important;
   display:block;
 }
+
+/* NOEL seasonal detail page: restrained Christmas palette and seamless snowflakes */
+body.noel-page{background-color:#f1f8fb;background-image:url("assets/images/noel-snowflakes.svg");background-repeat:repeat;color:#243b4a}
+.noel-page .pattern-hero{background:rgba(255,255,255,.96);border:1px solid #c8dfea;box-shadow:0 16px 46px rgba(56,100,128,.10)}
+.noel-page .pattern-hero h1{color:#b9082a}
+.noel-page .pattern-hero>.eyebrow{color:#a30b29}
+.noel-page .pill{background:#eaf5fa;border-color:#bfdce9;color:#365b71}
+.noel-page .pattern-preview{border:5px solid #e0eff5;box-shadow:0 8px 26px rgba(57,91,115,.12)}
+.noel-page .pattern-hero>.btn-green{background:#bb1231;border-color:#bb1231;color:#fff}
+.noel-page .pattern-hero>.btn-green:hover{background:#950c26}
+.noel-page .note{background:#edf7fb;border-color:#c9e2ee}
+.noel-page .note h3{color:#a80d2a}
+.noel-page .noel-details{font-size:14px;color:#486476;line-height:1.7;margin:15px 0 30px}
+@media(max-width:600px){.noel-page .pattern-hero{padding:30px 20px}}
